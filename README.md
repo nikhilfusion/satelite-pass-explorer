@@ -306,18 +306,7 @@ packages/contract   zod schemas + types shared by both
 data/               source GeoJSON (the derived .duckdb lives in data/db, git-ignored)
 docs/adr            architecture decision records
 docs/AI_WORKFLOW.md how coding agents were used (strategy, instructions, guard-rails)
-CLAUDE.md           standing instructions for coding agents working in this repo
 ```
-
----
-
-## Working with coding agents
-
-This project was built with a coding agent (Claude Code). The strategy, the standing instructions
-([`CLAUDE.md`](CLAUDE.md)) and the guard-rails are documented in [`docs/AI_WORKFLOW.md`](docs/AI_WORKFLOW.md).
-In short: profile the data first, define the contract, write tests that act as an oracle, **measure before
-optimising**, and verify in a real browser — the agent's output is accepted only when `npm run check` and the
-e2e suite are green.
 
 ---
 
