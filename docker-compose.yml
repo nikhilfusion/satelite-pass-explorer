@@ -1,0 +1,24 @@
+# docker compose up --build   ->   http://localhost:3000
+services:
+  app:
+    build:
+      context: .
+    image: orbit-explorer:local
+    ports:
+      - '${PORT:-3000}:3000'
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      # source GeoJSON (read-only) — the DuckDB file is derived from it on first start …
+      - ./data:/data/source:ro
+      # … and persisted here so restarts are instant
+      - orbit-db:/data/db
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  orbit-db:

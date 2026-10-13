@@ -1,0 +1,106 @@
+.app {
+  display: grid;
+  grid-template: 'header header' 48px 'side main' 1fr / 340px 1fr;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  grid-area: header;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand h1 {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.logo {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, var(--accent-2) 0 3px, transparent 4px);
+  transform: rotate(-30deg) scaleY(0.55);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  grid-area: side;
+  gap: 10px;
+  min-height: 0;
+  padding: 10px;
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+  overflow-y: auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mapWrap {
+  position: relative;
+  flex: 1;
+  min-height: 200px;
+}
+
+.bottom {
+  flex: none;
+  height: min(38vh, 360px);
+}
+
+.overlay {
+  position: absolute;
+  z-index: 5;
+  top: 12px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgb(11 15 23 / 90%);
+  transform: translateX(-50%);
+}
+
+.overlayError {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+@media (width <= 820px) {
+  .app {
+    grid-template: 'header' 48px 'main' 1fr 'side' auto / 1fr;
+    overflow-y: auto;
+  }
+
+  body {
+    overflow: auto;
+  }
+
+  .sidebar {
+    border-top: 1px solid var(--border);
+    border-right: 0;
+  }
+
+  .main {
+    height: 70vh;
+  }
+}

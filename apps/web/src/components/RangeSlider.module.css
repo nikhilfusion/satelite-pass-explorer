@@ -1,0 +1,64 @@
+.root {
+  padding: 8px 8px 0;
+  user-select: none;
+  touch-action: none;
+}
+
+.track {
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--panel-2);
+}
+
+.fill {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  border-radius: 4px;
+  background: rgb(76 201 240 / 35%);
+  cursor: grab;
+}
+
+.fill:active {
+  cursor: grabbing;
+}
+
+.handle {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  background: var(--bg);
+  transform: translate(-50%, -50%);
+  cursor: ew-resize;
+}
+
+.handle:focus-visible {
+  box-shadow: 0 0 0 3px rgb(76 201 240 / 40%);
+  outline: none;
+}
+
+.tick {
+  position: absolute;
+  top: 8px;
+  width: 1px;
+  height: 5px;
+  background: var(--border);
+}
+
+.labels {
+  position: relative;
+  height: 18px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.labels span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}

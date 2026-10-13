@@ -1,0 +1,15 @@
+{
+  "name": "@sat/contract",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API contract shared by backend and frontend: zod schemas + inferred types.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "zod": "^4.1.0"
+  }
+}

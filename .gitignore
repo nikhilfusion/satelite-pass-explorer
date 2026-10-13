@@ -1,0 +1,13 @@
+node_modules
+dist
+coverage
+*.tsbuildinfo
+.env
+.env.local
+playwright-report
+test-results
+# generated DuckDB database (rebuilt with `npm run ingest`)
+data/db/
+*.duckdb
+*.duckdb.wal
+.DS_Store

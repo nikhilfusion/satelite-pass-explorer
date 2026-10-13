@@ -1,0 +1,46 @@
+.coords {
+  margin: 0;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.coordInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.coordInputs label {
+  display: grid;
+  gap: 3px;
+  font-size: 11px;
+}
+
+.places {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.radius {
+  display: grid;
+  gap: 4px;
+}
+
+.radius input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.follow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.window {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}

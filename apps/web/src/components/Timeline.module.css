@@ -1,0 +1,66 @@
+.root {
+  display: grid;
+  gap: 3px;
+  min-height: 0;
+  overflow: auto;
+  padding: 2px 4px 0 0;
+}
+
+.lane,
+.axis {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 6px;
+}
+
+.name {
+  font-size: 10px;
+}
+
+.track {
+  position: relative;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--bg);
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.bar {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  min-width: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.bar[data-hover='true'],
+.bar[data-selected='true'] {
+  z-index: 1;
+  outline: 2px solid #fff;
+  opacity: 1;
+}
+
+.axis .track {
+  height: 14px;
+  background: none;
+}
+
+.tickLabel {
+  position: absolute;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
