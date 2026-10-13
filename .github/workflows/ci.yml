@@ -45,7 +45,7 @@ jobs:
       # Build the real database so the real-dataset regression tests run (they skip locally otherwise).
       - name: Cache DuckDB database
         id: db-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: data/db
           key: duckdb-${{ hashFiles('data/*.json', 'apps/api/src/infra/**') }}
